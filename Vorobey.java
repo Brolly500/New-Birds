@@ -28,16 +28,12 @@ public class Vorobey extends Bird {
 
         R2 = r*r;
         x = (int) ((x0-r)+(Math.random() * (r*2)));
+        System.out.println("this x0 "+ (x0-x));
         color = Color.gray;
-        if (x0-x<=0) y= (r^2)-((x0-x)^2);
-
-        else y = (r^2)-(x-x0)^2;
-        System.out.println((r^2)-((x0-x)^2));
-        System.out.println("y without  sqrt: "+y);
-        y= (int) Math.sqrt(y);
-        y=y+y0;
-        System.out.println((r^2)+" r|x-x0  "+ ((x-x0)^2));
-        System.out.println(x+" "+y);
+        y =(int) Math.sqrt((r*r)-(x0-x)*(x0-x));
+        int ca =(int) ((Math.random()*2));
+        if (ca>=1) y=y0+y;
+        else y = y0-y;
 
         if (addedCoordinates == true) {
             if (x < minX) {
